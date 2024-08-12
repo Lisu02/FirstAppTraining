@@ -12,7 +12,7 @@ fun FunFactsNavigationGraph(userInputViewModel: UserInputViewModel = viewModel()
     val navController = rememberNavController()
     NavHost(navController = navController, startDestination = Routes.USER_INPUT_SCREEN){
         composable(Routes.USER_INPUT_SCREEN){
-            UserInputScreen(userInputViewModel)
+            UserInputScreen(userInputViewModel,navController)
         }
 
         composable(Routes.WELCOME_SCREEN){

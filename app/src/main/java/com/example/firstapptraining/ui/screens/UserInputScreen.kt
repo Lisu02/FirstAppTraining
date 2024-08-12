@@ -17,6 +17,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.firstapptraining.R
@@ -30,7 +31,8 @@ import com.example.firstapptraining.ui.UserInputViewModel
 
 @Composable
 fun UserInputScreen(
-    userInputViewModel: UserInputViewModel
+    userInputViewModel: UserInputViewModel,
+    navController: NavController
 ) {
     Surface(
         modifier = Modifier.fillMaxSize()
@@ -83,6 +85,7 @@ fun UserInputScreen(
                     goToDetailsScreen = {
                         //TODO: Dokończyć przejście do nastepnej strony oraz druga stronę
                         //
+                        navController.navigate(Routes.WELCOME_SCREEN)
                     }
                 )
             }
@@ -97,7 +100,7 @@ fun UserInputScreen(
 @Preview
 @Composable
 fun UserInputScreenPreview() {
-    UserInputScreen( UserInputViewModel())
+    UserInputScreen( UserInputViewModel(), navController = rememberNavController())
 }
 
 @Composable
